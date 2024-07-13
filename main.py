@@ -1,15 +1,22 @@
-#importing Gradio library
+#importing libraries
 import gradio as gr
+from langchain_community.llms import Ollama
 
+BASE_URL = "http://localhost:11434"
+MODEL = "llama3"
 
-def greet(name, intensity):
-    """ Importing gradio for demop app """
-    return "Hello " * intensity + name + "!"
+def llm_response(query):
+    """ Function to pass the prompt to the llm """
+    ollama = Ollama(
+        base_url = BASE_URL,
+        model = MODEL
+    )
+    return ollama.invoke(query)
 
 demo = gr.Interface(
-    fn=greet,
-    inputs=["text", "slider"],
-    outputs=["text"],
+    fn=llm_response,
+    inputs=[gr.Textbox(label="Query",lines=5)],
+    outputs=[gr.Textbox(label="Some thoughts!",lines=5)],
 )
-
-demo.launch()
+if __name__ == "__main__":
+    demo.launch(share=True)

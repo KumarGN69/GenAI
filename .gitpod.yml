@@ -1,17 +1,12 @@
 # List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
 tasks:
   - name: Terminal 1
-    before: echo "Hi from Terminal 1"
-    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
-    command: echo 'start script'
-
-  - name: Terminal 2
     before: echo "Hi from Terminal 2"
     init: curl -fsSL https://ollama.com/install.sh  | sh
     command: ollama serve
     
   - name: install and set up the environment  
-    init: pip install --upgrade pip && pip install langchain_community
+    init: pip install --upgrade pip && pip install langchain_community && pip install gradio
 
  
 

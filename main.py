@@ -1,6 +1,6 @@
 #importing libraries
 import gradio as gr
-from langchain_community.llms import Ollama
+from langchain_community.llms.ollama import Ollama
 
 BASE_URL = "http://localhost:11434"
 MODEL = "llama3"

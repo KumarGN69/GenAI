@@ -16,3 +16,4 @@ vector_store = Chroma.from_documents(documents=pages, embedding=OllamaEmbeddings
 answers = vector_store.similarity_search("WHo is the project manager from Meta")
 for answer in answers:
     print(answer)
+    

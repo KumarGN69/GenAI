@@ -19,4 +19,4 @@ demo = gr.Interface(
     outputs=[gr.Textbox(label="Some thoughts!",lines=5)],
 )
 if __name__ == "__main__":
-    demo.launch(share=True)
+    demo.launch()

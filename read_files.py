@@ -3,8 +3,8 @@ from langchain_chroma import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
 
 #Load the pdf files and split them into chunks
-# file_path = "./MSOW.pdf"
-file_path = "./MOSAIC_SOW.pdf"
+file_path = "./MSOW.pdf"
+# file_path = "./MOSAIC_SOW.pdf"
 loader = PyPDFLoader(file_path)
 
 pages = loader.load_and_split()

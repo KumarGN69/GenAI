@@ -4,10 +4,11 @@ import json
 import os
 
 API_ENDPOINT = "https://api.tavily.com/search"
-API_KEY = os.environ.get('TAVILY_API_KEY')
+API_KEY = os.environ.get("TAVILY_API_KEY")
+print(API_KEY)
 
-QUERY = input("What do you want to search?: ")
-
+# QUERY = input("What do you want to search?: ")
+QUERY = "What is the best way to read pdf files in GenAI?"
 def tavily_search(query,search_depth):
     """ search function using Tavily API"""
     auth_headers = {
@@ -20,7 +21,7 @@ def tavily_search(query,search_depth):
     "search_depth": search_depth
     }
 
-    response = requests.post(API_ENDPOINT, headers=auth_headers, json=query_payload, timeout=15)
+    response = requests.post(API_ENDPOINT, headers=auth_headers, json=query_payload, timeout=15, verify=False)
     # response = {
     #     "status_code": 200,
     #     "text": "OK",
@@ -29,15 +30,15 @@ def tavily_search(query,search_depth):
     #         },
     #     "err_text": "Dummy error msg"
     # }
-    # if response.status_code == 200:
-    if response['status_code'] ==  200:
-        # return response.json()
-        return response['content']
+    if response.status_code == 200:
+    # if response['status_code'] ==  200:
+        return response.json()
+        # return response['content']
     else:
-        # return f"Error: {response.status_code}. {response.text}"
-        return f"Error: {response['status_code']}. {response['err_text']}"
+        return f"Error: {response.status_code}. {response.text}"
+        # return f"Error: {response['status_code']}. {response['err_text']}"
 
 results = tavily_search(query=QUERY,search_depth="basic")
-
+print(results)
 # print(results['results'][0]['content'])
-print(results['details'])
+# print(results['details'])

@@ -3,3 +3,4 @@ requests~=2.32.3
 langchain-community~=0.2.7
 langchain-chroma~=0.1.2
 pypdf~=4.3.1
+chromadb~=0.5.5

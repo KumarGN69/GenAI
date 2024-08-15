@@ -6,7 +6,7 @@ tasks:
     command: ollama serve 
   
   - name: install and set up the environment  
-    init: pip install langchain_community && pip install langchain_chroma && pip install gradio && pip install --upgrade pypdf && ollama run llama3.1
+    init: pip install requests && pip install langchain_community && pip install langchain_chroma && pip install gradio && pip install --upgrade pypdf && ollama run llama3.1
 
  
 

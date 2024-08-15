@@ -21,7 +21,7 @@ def tavily_search(query,search_depth):
     "search_depth": search_depth
     }
 
-    response = requests.post(API_ENDPOINT, headers=auth_headers, json=query_payload, timeout=15, verify=False)
+    response = requests.post(API_ENDPOINT, headers=auth_headers, json=query_payload, timeout=15, verify=True)
     # response = {
     #     "status_code": 200,
     #     "text": "OK",
@@ -39,6 +39,6 @@ def tavily_search(query,search_depth):
         # return f"Error: {response['status_code']}. {response['err_text']}"
 
 results = tavily_search(query=QUERY,search_depth="basic")
-print(results)
-# print(results['results'][0]['content'])
+# print(results)
+print(results['results'][0]['content'])
 # print(results['details'])

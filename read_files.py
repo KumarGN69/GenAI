@@ -1,23 +1,25 @@
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_chroma import Chroma 
 from langchain_community.embeddings import OllamaEmbeddings
 import chromadb
 from chromadb import PersistentClient
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from uuid import uuid4
+# import pymupdf
 
 
 #Load the pdf files and split them into chunks
 """This whole section on loading the PDF file, creating embeddings and adding to vector DB needs to be redone"""
 #-----------------------------------------------------------------------------#
-file_path = "./MSOW.pdf"
+# file_path = "./MSOW.pdf"
+FILE_PATH = "SOW.pdf"
 
-# file_path = "./MOSAIC_SOW.pdf"
-loader = PyPDFLoader(file_path)
+loader = PyMuPDFLoader(FILE_PATH)
 pages = loader.load_and_split()
-# print(pages)
+
+# print(pages) to check if its reading correctly
 for page in pages:
-    print(page.page_content)
+    print(page)
 
 #create the chroma client and collection
 chroma_client = chromadb.Client()

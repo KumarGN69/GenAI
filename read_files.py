@@ -14,8 +14,9 @@ pages = loader.load_and_split()
 
 # Setup Vector Db Chroma
 vector_store = Chroma.from_documents(documents=pages, embedding=OllamaEmbeddings(model="llama3.1"))
-question = input("Enter you query: ")
-answers = vector_store.similarity_search(question)
-for answer in answers:
-    print(answer)
+while True:
+    question = input("Enter you query: ")
+    answers = vector_store.similarity_search(question)
+    for answer in answers:
+        print(answer)
     

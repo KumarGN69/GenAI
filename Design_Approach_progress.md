@@ -9,6 +9,7 @@ read_files.py
 - split via text splitter into smaller chunks
 - Create embeddings and define a collection
 - add the text chunks into the embedding collection
+  **- Research more on RecursiveCharacterTextSplitter and the type of the embedding model to speed up the performance**
 **- Create persistent collection?**
 - Create a vector data store reference
 - create an embedding for the query

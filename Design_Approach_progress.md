@@ -20,9 +20,9 @@ search.py
 - Use Tavily API to get the latest info for the query from external sources
 - **Create embeddings and persistance into a vector DB?**
 
-**Separation of Concerns using MVC design approach
-- main - Control flow
-- User Interface
-- Query/search 
-- Model for embedding and data store/persistence**
+**Separation of Concerns using MVC design approach**
+- **main - Control flow**
+- **User Interface**
+- **Query/search** 
+- **Model for embedding and data store/persistenc**
 - 

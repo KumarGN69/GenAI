@@ -8,7 +8,7 @@ tasks:
     command: ollama serve 
   
   - name: install and set up the environment  
-    init: pip install requests && pip install langchain-community && pip install langchain-huggingface && pip install langchain-chroma && pip install gradio && pip install pymupdf 
+    init: pip install requests && pip install langchain-community && pip install langchain-huggingface && pip install langchain-chroma && pip install gradio && pip install streamlit && pip install pymupdf && pip install --upgrade pip
 
  
 
